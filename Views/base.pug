@@ -1,0 +1,93 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(content="width=device-width, initial-scale=1.0", name="viewport")
+    title #{title}
+    //- meta(name="description", content=)
+    //- meta(name="keywords", content=)
+
+    //- link(href="assets/img/favicon.png", rel="icon")
+    //- link(href="assets/img/apple-touch-icon.png", rel="apple-touch-icon")
+
+    link(href="https://fonts.googleapis.com", rel="preconnect")
+    link(href="https://fonts.gstatic.com", rel="preconnect", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel="stylesheet")
+    // Vendor CSS Files
+    link(href="/assets/vendor/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/assets/vendor/bootstrap-icons/bootstrap-icons.css", rel="stylesheet")
+    link(href="/assets/vendor/aos/aos.css", rel="stylesheet")
+    link(href="/assets/vendor/fontawesome-free/css/all.min.css", rel="stylesheet")
+    link(href="/assets/vendor/glightbox/css/glightbox.min.css", rel="stylesheet")
+    link(href="/assets/vendor/swiper/swiper-bundle.min.css", rel="stylesheet")
+    // Main CSS File
+    link(href="/assets/css/main.css", rel="stylesheet")
+  
+  body.index-page
+    header#header.header.d-flex.align-items-center.fixed-top
+      .container-fluid.container-xl.position-relative.d-flex.align-items-center
+        a.logo.d-flex.align-items-center.me-auto(href="/")
+          // Uncomment the line below if you also wish to use an image logo
+          // <img src="assets/img/logo.png" alt="">
+
+          h1.sitename Regionify | #{heading}
+        nav#navmenu.navmenu
+          ul
+            li
+              a.active(href="/home") Home
+            li
+              a(href="/docs") Documentation
+          i.mobile-nav-toggle.d-xl-none.bi.bi-list
+        a.btn-getstarted Random
+    br
+    block content
+    footer#footer.footer.dark-background
+      .container.footer-top
+        .row.gy-4
+          .col-lg-5.col-md-12.footer-about
+            a.logo.d-flex.align-items-center(href="index.html")
+              span.sitename Regionify
+            p This project was built as part of an undergraduate project.
+            .social-links.d-flex.mt-4
+              a(href="")
+                i.bi.bi-twitter-x
+              a(href="")
+                i.bi.bi-facebook
+              a(href="")
+                i.bi.bi-instagram
+              a(href="")
+                i.bi.bi-linkedin
+          .col-lg-2.col-6.footer-links
+            h4 Useful Links
+            ul
+              li
+                a(href="/") Home
+              li
+                a(href="/about") About us
+              li
+                a(href="/about") Documentation
+          .col-lg-3.col-md-12.footer-contact.text-center.text-md-start
+            h4 Contact Us
+            p
+              strong Email:
+              span ismailisyaku52@gmail.com
+      .container.copyright.text-center.mt-4
+        p © 
+          span Copyright
+          strong.px-1.sitename Regionify
+          span All Rights Reserved
+    // Scroll Top
+    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
+      i.bi.bi-arrow-up-short
+    // Preloader
+    #preloader
+    // Vendor JS Files
+    script(src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")
+    script(src="/assets/vendor/php-email-form/validate.js")
+    script(src="/assets/vendor/aos/aos.js")
+    script(src="/assets/vendor/purecounter/purecounter_vanilla.js")
+    script(src="/assets/vendor/glightbox/js/glightbox.min.js")
+    script(src="/assets/vendor/swiper/swiper-bundle.min.js")
+
+    // Main JS File
+    script(src="/assets/js/main.js")

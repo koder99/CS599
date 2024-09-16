@@ -1,0 +1,35 @@
+extends base
+block content
+    .documentation__container
+        .documentation__contents 
+            h4(style="color:#fff;text-align:centre") This API was built using modern tools and techniques in the javascript ecosystem and can be used by developers worldwide to obtain relevant data. The table below shows a list of routes, their associated HTML methods and their corresponding actions when called.
+
+    .documentation__table 
+        - const rootUrl = `${url}/api/v1/states`;
+        table(class='doc__table') 
+            thead
+                tr 
+                    th(style="text-align:center") METHOD 
+                    th(style="text-align:center") URL 
+                    th(style="text-align:center")  ACTIONS 
+            tbody
+                tr 
+                td(style="text-align:center")  GET 
+                td(style="text-align:center")  #{rootUrl}/random
+                td(style="text-align:center")  Returns a random state data as a JSON object
+            tr 
+                td(style="text-align:center")  GET 
+                td(style="text-align:center")  #{rootUrl}/
+                td(style="text-align:center") Returns the list of all states as a single array containing JSON objects.
+            tr   
+                td(style="text-align:center")  GET 
+                td(style="text-align:center")  #{rootUrl}/:state
+                td(style="text-align:center") Return a JSON object for a single state. 
+    .documentation__container
+        .documentation__contents 
+            h4(style="color:#fff") The API routes that are accessible to the public are routes that have the CORS (Cross Origin Resource Sharing) activated. Developers can integrate the API into their project by sending API requests to the URL's with the corresponding HTTP METHODS. The API is free to use with no limitations involving the use of API keys. Also this API serves to demonstrate the process of modern API development. The tools, techniques, libraries and programming language used can be applied to the development of any kind of API. The method of making API Request's would depend on the programming language / library used.
+    
+    .documentation__container(style='margin-bottom:20px;') 
+        .documentation__contents(style="background-color:#fff;margin-bottom:30px") 
+            h4(style='text-align:center') Sample API Response
+            h5(style="margin-bottom:35px; height: 90%")#api-sample       

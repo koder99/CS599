@@ -1,0 +1,31 @@
+extends base
+block content 
+    section#hero.hero.section.dark-background
+        img.hero-bg(src="assets/img/world-dotted-map.png", alt= "" data-aos="fade-in")
+        .container
+            .row.gy-4.d-flex.justify-content-between
+                .col-lg-6.order-2.order-lg-1.d-flex.flex-column.justify-content-center
+                    h2.heading-secondary(data-aos="fade-up") Instructions 
+                    p.heading-secondary-text(data-aos="fade-up", data-aos-delay="100") You are required to type in the name of the state you wish to retrieve data about in the search bar below. You may click on the button at the top right corner of the screen if you want to retrieve data for a randomly generated state.
+                    form.form-search.d-flex.align-items-stretch.mb-3(action="#", data-aos="fade-up", data-aos-delay="200")
+                        input.form-control(type="text", placeholder="Type the state name e.g. Bauchi")
+                        button.btn.btn-primary(type="submit") Search
+                    //- .row.gy-4(data-aos="fade-up", data-aos-delay="300")
+                        .col-lg-3.col-6
+                            .stats-item.text-center.w-100.h-100
+                                span.purecounter(data-purecounter-start="0", data-purecounter-end="232", data-purecounter-duration="0") 232
+                                p Clients
+                        .col-lg-3.col-6
+                            .stats-item.text-center.w-100.h-100
+                                span.purecounter(data-purecounter-start="0", data-purecounter-end="521", data-purecounter-duration="0") 521
+                                p Projects
+                        .col-lg-3.col-6
+                            .stats-item.text-center.w-100.h-100
+                                span.purecounter(data-purecounter-start="0", data-purecounter-end="1453", data-purecounter-duration="0") 1453
+                                p Support
+                        .col-lg-3.col-6
+                            .stats-item.text-center.w-100.h-100
+                                span.purecounter(data-purecounter-start="0", data-purecounter-end="32", data-purecounter-duration="0") 32
+                                p Workers
+                .col-lg-5.order-1.order-lg-2.hero-img(data-aos="zoom-out")
+                    img.img-fluid.mb-3.mb-lg-0(src="assets/img/hero-img.svg")

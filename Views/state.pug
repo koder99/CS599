@@ -1,0 +1,24 @@
+extends base
+block content 
+    .state__content 
+        section.state__governor
+            .img__box
+                img.state__governor-img(src=`/img/${state.governor.officePortrait} `, alt=`Office Portrait`)
+                - const string = state.name == 'Abuja' ? `Minster of FCT`: `Governor of ${state.name} state`;
+                h2.state__governor-text= string 
+        section.state__details
+            .img__box.img__box-location
+                img.state__location(src=`/img/${state.name}'s-location.jpg`, alt=`${state.name}'s location on map`)
+                h2.state__location-text The location of #{state.name} on the Map of Nigeria
+        section.state__detailed 
+            .state__detailed-text 
+                h2(style="color:#fff; text-align: center; margin-bottom:25px") About #{state.name}
+                .center__parent
+                    p(style="color:#fff;") #{state.name} is a Nigerian state located in the #{state.geopoliticalZone}ern Geopolitical Zone of the country. It's capital is #{state.capital} and it's slogan is #{state.slogan}. The governor of #{state.name} state is #{state.governor.firstName} #{state.governor.lastName}. It was created on #{state.createdOn} and has a latitude of #{state.coordinates.latitude} and a longitude of  #{state.coordinates.longitude}
+                    br
+                    - const areas = state.localGovernmentAreas.join(', ')
+                    - const ethicities = state.ethnicities.join(', ')
+                    p(style="color:#fff;") #{state.name} state spans an area of about #{state.area.total} square metres and has an elevation of #{state.area.elevation} feet. The state has an approximate population of #{state.population.total} people and is ranked as the #{state.population.rank} of 36 most populated state in Nigeria.
+                    br
+                    p(style="color:#fff;") #{state.name} has #{state.localGovernmentAreas.length} local government areas and it's spoken tribes are #{ethicities}. The local government areas are #{areas}.
+            .state__detailed-facts 
