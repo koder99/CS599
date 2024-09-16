@@ -4,7 +4,6 @@ const userController = require("./../Controllers/userController");
 
 router.route("/slugify").get(userController.slugify);
 router.get("/defective", userController.checkPosition);
-router.get("resize", userController.resizeImages);
 
 router
   .route("/s/:slug")
