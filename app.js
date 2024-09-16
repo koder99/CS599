@@ -21,7 +21,6 @@ const unhandledRouteHandler = (req, res, next) => {
 
 // SERVING STATIC FILES
 app.use(express.static(`${__dirname}/public`));
-app.use(simpleMiddleware);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
