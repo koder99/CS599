@@ -155,15 +155,7 @@ stateSchema.pre("save", function (next) {
 
 stateSchema.pre("save", function (next) {
   // Add a link that points to the image on the servers
-  this.locationOnMap = `${req.protocol}://${req.get("host")}/img/${
-    this.locationOnMap
-  }.jpg `;
-  let linkedImages = [];
-  this.images.forEach(function (image) {
-    let linkedImage = `${req.protocol}://${req.get('host')}/img/${image}`;
-    linkedImages.push(linkedImage);
-  });
-  this.images = linkedImages;
+  this.locationOnMap = `${this.name}'s-location.jpg`;
   next();
 });
 

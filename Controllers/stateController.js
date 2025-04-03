@@ -184,6 +184,19 @@ exports.getState = CatchAsync(async (req, res, next) => {
   if (req.body.state) {
     req.body.state = lodash.capitalize(req.body.state);
     state = await State.findOne({ name: req.body.state });
+    state.locationOnMap = `${req.protocol}://${req.get("host")}/img/${
+      state.locationOnMap
+    }`;
+    let parsedImages = [];
+    state.images.forEach(function (image) {
+      let parsedImage = `${req.protocol}://${req.get("host")}/img/${image}`;
+      parsedImages.push(parsedImage);
+    });
+    state.images = parsedImages;
+    let portrait = `${req.protocol}://${req.get("host")}/img/${
+      state.governor.officePortrait
+    }`;
+    state.governor.officePortrait = portrait;
   }
 
   if (!state) return next(new AppError(`There is no state with such a name!`));

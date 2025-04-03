@@ -110,8 +110,7 @@ userSchema.pre("save", function (next) {
 });
 userSchema.pre("save", function (next) {
   // SET AN OFFICAL IMAGE
-  let portrait = `${this.firstName}-${this.lastName}'s official portrait.png`;
-  this.officePortrait = `${req.protocol}://${req.get("host")}/img/${portrait}`;
+  this.officePortrait = `${this.firstName}-${this.lastName}'s official portrait.png`;
   next();
 });
 
