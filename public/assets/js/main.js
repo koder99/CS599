@@ -10,7 +10,7 @@ let api_sample = document.getElementById("api-sample");
 
 // DECLARING FUNCTIONS
 const greeting = function () {
-  let message = `This web application was not build for mobile viewing. You are advised to use the desktop view mode for a better experience.`;
+  let message = `This web application was not built for mobile viewing. You are advised to use the desktop view mode for a better experience.`;
   window.alert(message);
 };
 
