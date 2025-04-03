@@ -37,7 +37,6 @@ exports.getState = CatchAsync(async (req, res, next) => {
   }
   res.status(200).render("state", {
     state,
-    baseUrl,
     title: `Regionify | ${state.name} State`,
     heading: `${state.name.toUpperCase()}`,
   });
