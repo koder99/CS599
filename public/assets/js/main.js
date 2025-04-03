@@ -187,6 +187,19 @@ const sampleObject = {
   },
 };
 
+const generateJSONSample = async function () {
+  try {
+    const res = await fetch(`/api/v1/states/random`);
+    const response = await res.json();
+    if (response.status === "success") {
+      return response;
+    }
+    if (response.status === "fail") {
+      return "Something went wrong with the API Call!";
+    }
+  } catch (error) {}
+};
+
 const stringifiedObject = JSON.stringify(sampleObject);
 
 const loadRandomState = async function () {
@@ -237,6 +250,10 @@ const fetchState = async function () {
 window.addEventListener("DOMContentLoaded", function () {
   this.setTimeout(greeting, 500);
 });
+
+if (api_sample) {
+  api_sample.textContent = generateJSONSample();
+}
 
 (function () {
   "use strict";
