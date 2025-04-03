@@ -35,3 +35,5 @@ block content
         .documentation__contents(style="background-color:#fff;margin-bottom:30px") 
             h4(style='text-align:center') Sample API Response
             h5(style="margin-bottom:35px; height: 90%")#api-sample
+
+            h5(style="text-align:center") The fields locationOnMap, officePortrait (in the governor field) and images field(contains an array of images) are the names of files stored in the project file system. Developers who would like to display such images must prefix the strings with the #{url}/img/fieldName (where fieldName can be either locationOnMap, officePortraitor an image in the images array.). For example #{url}/img/Nasarawa's-location.jpg
