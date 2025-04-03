@@ -52,6 +52,7 @@ const printErrorProd = function (error, req, res) {
     });
   }
   if (req.url.startsWith("/") && !error.isOperational) {
+    console.log(error);
     return res
       .status(500)
       .render("error", { message: `Something went very wrong!` });
