@@ -153,6 +153,20 @@ stateSchema.pre("save", function (next) {
   next();
 });
 
+stateSchema.pre("save", function (next) {
+  // Add a link that points to the image on the servers
+  this.locationOnMap = `${req.protocol}://${req.get("host")}/img/${
+    this.locationOnMap
+  }.jpg `;
+  let linkedImages = [];
+  this.images.forEach(function (image) {
+    let linkedImage = `${req.protocol}://${req.get('host')}/img/${image}`;
+    linkedImages.push(linkedImage);
+  });
+  this.images = linkedImages;
+  next();
+});
+
 stateSchema.pre(/^findOne/, function (next) {
   this.populate({
     path: "governor",

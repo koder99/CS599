@@ -9,6 +9,11 @@ let instruction_heading_text = document.querySelector(
 let api_sample = document.getElementById("api-sample");
 
 // DECLARING FUNCTIONS
+const greeting = function () {
+  let message = `This web application was not build for mobile viewing. You are advised to use the desktop view mode for a better experience.`;
+  window.alert(message);
+};
+
 const updateUI = function (type, location, data) {
   instruction_heading.textContent = `Request Status`;
   if (type === "success" && location == "random") {
@@ -181,6 +186,7 @@ const sampleObject = {
     },
   },
 };
+
 const stringifiedObject = JSON.stringify(sampleObject);
 
 const loadRandomState = async function () {
@@ -227,6 +233,10 @@ const fetchState = async function () {
     console.log(error);
   }
 };
+
+window.addEventListener("DOMContentLoaded", function () {
+  this.setTimeout(greeting, 500);
+});
 
 (function () {
   "use strict";

@@ -62,7 +62,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a position!"],
     unique: true,
-    index: 1
+    index: 1,
   },
   dateSwornIn: {
     type: Date,
@@ -110,7 +110,8 @@ userSchema.pre("save", function (next) {
 });
 userSchema.pre("save", function (next) {
   // SET AN OFFICAL IMAGE
-  this.officePortrait = `${this.firstName}-${this.lastName}'s official portrait.png`;
+  let portrait = `${this.firstName}-${this.lastName}'s official portrait.png`;
+  this.officePortrait = `${req.protocol}://${req.get("host")}/img/${portrait}`;
   next();
 });
 

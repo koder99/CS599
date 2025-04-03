@@ -3,12 +3,12 @@ block content
     .state__content 
         section.state__governor
             .img__box
-                img.state__governor-img(src=`/img/${state.governor.officePortrait} `, alt=`Office Portrait`)
+                img.state__governor-img(src=state.governor.officePortrait, alt=`Office Portrait`)
                 - const string = state.name == 'Abuja' ? `Minster of FCT`: `Governor of ${state.name} state`;
                 h2.state__governor-text= string 
         section.state__details
             .img__box.img__box-location
-                img.state__location(src=`/img/${state.name}'s-location.jpg`, alt=`${state.name}'s location on map`)
+                img.state__location(src=`/${state.name}'s-location.jpg`, alt=`${state.name}'s location on map`)
                 h2.state__location-text The location of #{state.name} on the Map of Nigeria
         section.state__detailed 
             .state__detailed-text 
