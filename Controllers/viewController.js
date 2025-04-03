@@ -35,7 +35,6 @@ exports.getState = CatchAsync(async (req, res, next) => {
       new AppError(`There is no such state! Please check and try again!`, 404)
     );
   }
-  let baseUrl = `${req.protocol}://${req.get("host")}`;
   res.status(200).render("state", {
     state,
     baseUrl,

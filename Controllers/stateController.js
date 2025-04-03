@@ -196,7 +196,9 @@ exports.getState = CatchAsync(async (req, res, next) => {
     let portrait = `${req.protocol}://${req.get("host")}/img/${
       state.governor.officePortrait
     }`;
+    console.log(portrait);
     state.governor.officePortrait = portrait;
+    console.log(state.governor.officePortrait);
   }
 
   if (!state) return next(new AppError(`There is no state with such a name!`));
